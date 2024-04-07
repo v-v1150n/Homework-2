@@ -75,21 +75,21 @@ A sandwich attack is a manipulation strategy aimed at decentralized exchanges (D
 
 The general process of a sandwich attack includes:
 
-*Observing Target Transaction: Attackers monitor an impending transaction, noting the tokens and quantities involved.
+* Observing Target Transaction: Attackers monitor an impending transaction, noting the tokens and quantities involved.
 
-*Front-Running Trade: The attacker executes a trade before the target transaction, often in the same trading pair. This trade temporarily impacts the price, but the attacker can act swiftly before the target transaction occurs.
+* Front-Running Trade: The attacker executes a trade before the target transaction, often in the same trading pair. This trade temporarily impacts the price, but the attacker can act swiftly before the target transaction occurs.
 
-*Target Transaction: The attacker swiftly executes their own trade as the target transaction takes place, often at a more favorable price. Due to the influence of the front-running trade, the target transaction's price is affected, allowing the attacker to buy at a lower price or sell at a higher price.
+* Target Transaction: The attacker swiftly executes their own trade as the target transaction takes place, often at a more favorable price. Due to the influence of the front-running trade, the target transaction's price is affected, allowing the attacker to buy at a lower price or sell at a higher price.
 
 *Back-Running Trade: After the target transaction concludes, the attacker executes another trade to correct the price back to its normal level. This maximizes the attacker's profit.
 
 A sandwich attack can impact traders in the following ways:
 
-*Increased Price Slippage: Rapid trades by attackers can cause significant price fluctuations in a short period, making it difficult for traders to execute transactions at their intended prices and increasing price slippage.
+* Increased Price Slippage: Rapid trades by attackers can cause significant price fluctuations in a short period, making it difficult for traders to execute transactions at their intended prices and increasing price slippage.
 
-*Increased Trading Costs: Due to price volatility, traders may incur higher trading costs, especially in rapidly changing market conditions.
+* Increased Trading Costs: Due to price volatility, traders may incur higher trading costs, especially in rapidly changing market conditions.
 
-*Failed Transactions: In volatile price conditions, traders' orders may fail to execute as planned or execute at unfavorable price levels, leading to failed transactions or undesirable outcomes.
+* Failed Transactions: In volatile price conditions, traders' orders may fail to execute as planned or execute at unfavorable price levels, leading to failed transactions or undesirable outcomes.
 
 To mitigate the impact of sandwich attacks, decentralized exchanges may implement various measures, including increasing trading depth, implementing anti-manipulation measures, providing more liquidity, and improving trading algorithms. Additionally, traders can reduce the risk of being affected by attacks by choosing trading timeframes, using limit orders, and minimizing large trades.
 
