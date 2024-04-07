@@ -126,27 +126,49 @@ liquidity = {
 }
 
 initiontoken = 5
-target_tokenB = 20
+target_tokenB = 23
 
 best_path = find_best_path(liquidity, initiontoken, target_tokenB)
 answer = calculate(liquidity, initiontoken, best_path)
 
-path1 = ("tokenB", "tokenA","tokenE","tokenD","tokenC","tokenB")
-path2 = ("tokenB", "tokenA")
-path3 = ("tokenB", "tokenA", "tokenE")
-path4 = ("tokenB", "tokenA","tokenE","tokenD")
-path5 = ("tokenB", "tokenA","tokenE","tokenD","tokenC")
-path6 = ("tokenB", "tokenA","tokenE","tokenD","tokenC","tokenB")
-answer1 = calculate(liquidity, initiontoken, path1)
-answer2 = calculate(liquidity, initiontoken, path2)
-answer3 = calculate(liquidity, initiontoken, path3)
-answer4 = calculate(liquidity, initiontoken, path4)
-answer5 = calculate(liquidity, initiontoken, path5)
-answer6 = calculate(liquidity, initiontoken, path6)
+paths =[
+['tokenB', 'tokenA'],
+['tokenB', 'tokenA', 'tokenE'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB', 'tokenA'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB', 'tokenA', 'tokenE'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB', 'tokenA', 'tokenE', 'tokenD'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC'],
+['tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB', 'tokenA', 'tokenE', 'tokenD', 'tokenC', 'tokenB']
+]
+
+answers = {}
+
+# answer1 = calculate(liquidity, initiontoken, path1)
+# answer2 = calculate(liquidity, initiontoken, path2)
+# answer3 = calculate(liquidity, initiontoken, path3)
+# answer4 = calculate(liquidity, initiontoken, path4)
+# answer5 = calculate(liquidity, initiontoken, path5)
+# answer6 = calculate(liquidity, initiontoken, path6)
 
 
-print("'tokenB' -> 'tokenA':",answer2 ,"'tokenA' -> 'tokenE:'",answer3,"'tokenE' -> 'tokenD':",answer4,"'tokenD' -> 'tokenC':",answer5,"'tokenC' -> 'tokenB':",answer6)
+for i, path in enumerate(paths):
+    answer = calculate(liquidity, initiontoken, path)
+    answers[f"Path {i+2}"] = answer
 
+# Output the answers
+print("'tokenB' -> 'tokenA':", answers['Path 2'], 
+      "'tokenA' -> 'tokenE:'", answers['Path 3'], 
+      "'tokenE' -> 'tokenD':", answers['Path 4'], 
+      "'tokenD' -> 'tokenC':", answers['Path 5'], 
+      "'tokenC' -> 'tokenB':", answers['Path 6'],
+      "'tokenB' -> 'tokenA':", answers['Path 7'],
+      "'tokenA' -> 'tokenE':", answers['Path 8'],
+      "'tokenE' -> 'tokenD':", answers['Path 9'],
+      "'tokenD' -> 'tokenC':", answers['Path 10'],
+      "'tokenC' -> 'tokenB':", answers['Path 11'],)
 
-# print("Best path:", best_path)
-# print("Final tokenB:", answer)
+print("Best path:", best_path)
+print("Final tokenB:", answer)
