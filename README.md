@@ -13,14 +13,35 @@ Provide your profitable path, the amountIn, amountOut value for each swap, and y
     * Swap 3: 'tokenE' -> 'tokenD': AmountIn = 1.0583153138066885 ether, AmountOutMin = 2.429786260142227 ether
     * Swap 4: 'tokenD' -> 'tokenC': AmountIn = 2.429786260142227 ether, AmountOutMin = 5.038996197252911 ether
     * Swap 5: 'tokenC' -> 'tokenB': AmountIn = 5.038996197252911 ether, AmountOutMin = 20.042339589188174 ether
-    * Final Reward (tokenB balance): 20042339589188176107
+    * Final Reward (tokenB balance): 20.042339589188176107
 
 ## Problem 2
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
 **********************************************************************************************************************
 > 
-Slippage in AMM refers to the difference between the expected price of a trade and the price at which the trade is executed. It occurs due to the dynamic nature of liquidity pools in AMMs, where larger trades can cause the price of a token to shift.
-Uniswap V2 addresses this issue by using a mechanism called the Constant Product Market Maker Model. In this model, the product of the reserves of two tokens in a liquidity pool remains constant. When a trade occurs, it causes the reserves to rebalance in a way that the product remains the same. This ensures that the price impact of a trade is proportional to the trade size, mitigating slippage.
+Slippage in Automated Market Makers (AMM) refers to the difference between the expected price of a trade and the actual executed price. It occurs because the price of assets in an AMM is determined by the ratio of the asset reserves in the liquidity pool, and when a trade is executed, the pool's reserves change, causing the price to move.
+
+Uniswap V2 addresses the slippage issue by implementing a mechanism called the constant product formula. This formula ensures that the product of the reserve amounts of the two tokens in a liquidity pool remains constant before and after a trade. As a result, the price of tokens adjusts dynamically based on the trade volume, minimizing slippage.
+
+solidity
+``` 
+function swapExactTokensForTokens(
+    uint amountIn, // The exact amount of input tokens to swap
+    uint amountOutMin, // The minimum amount of output tokens expected
+    address[] calldata path, // An array of token addresses representing the swap path
+    address to, // The address to receive the output tokens
+    uint deadline // The deadline for the swap to be executed
+) external returns (uint[] memory amounts);
+``` 
+In this function:
+
+`amountIn`  represents the exact amount of input tokens the user wants to swap.
+`amountOutMin` specifies the minimum amount of output tokens that the user is willing to accept. This parameter helps protect users from excessive slippage.
+`path` is an array of token addresses representing the swap path. For example, if swapping from token A to token B, the path would be `[tokenA, tokenB]`.
+`to` is the address that will receive the output tokens after the swap.
+`deadline` specifies the deadline for the swap to be executed. If the transaction is not confirmed before the deadline, it will revert.
+
+By allowing users to specify a minimum output amount (amountOutMin), Uniswap V2 ensures that traders have control over the maximum slippage they are willing to accept. If the actual output amount is lower than the specified amountOutMin, the swap will revert, protecting the trader from excessive slippage.
 
 ## Problem 3
 Please examine the mint function in the UniswapV2Pair contract. Upon initial liquidity minting, a minimum liquidity is subtracted. What is the rationale behind this design?
