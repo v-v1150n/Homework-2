@@ -5,14 +5,15 @@ Please complete the report problem below:
 ## Problem 1
 Provide your profitable path, the amountIn, amountOut value for each swap, and your final reward (your tokenB balance).
 
-> Profitable Path: 'tokenB' -> 'tokenA' -> 'tokenE' -> 'tokenD' -> 'tokenC' -> 'tokenB'
-AmountIn and AmountOut for each swap:
-Swap 1: 'tokenB' -> 'tokenA': AmountIn = 5 ether, AmountOutMin = 5.655321988655322 ether
-Swap 2: 'tokenA' -> 'tokenE': AmountIn = 5.655321988655322 ether, AmountOutMin = 1.0583153138066885 ether
-Swap 3: 'tokenE' -> 'tokenD': AmountIn = 1.0583153138066885 ether, AmountOutMin = 2.429786260142227 ether
-Swap 4: 'tokenD' -> 'tokenC': AmountIn = 2.429786260142227 ether, AmountOutMin = 5.038996197252911 ether
-Swap 5: 'tokenC' -> 'tokenB': AmountIn = 5.038996197252911 ether, AmountOutMin = 20.042339589188174 ether
-Final Reward (tokenB balance): 20042339589188176107
+> 
+* Profitable Path: 'tokenB' -> 'tokenA' -> 'tokenE' -> 'tokenD' -> 'tokenC' -> 'tokenB'
+* AmountIn and AmountOut for each swap:
+* Swap 1: 'tokenB' -> 'tokenA': AmountIn = 5 ether, AmountOutMin = 5.655321988655322 ether
+* Swap 2: 'tokenA' -> 'tokenE': AmountIn = 5.655321988655322 ether, AmountOutMin = 1.0583153138066885 ether
+* Swap 3: 'tokenE' -> 'tokenD': AmountIn = 1.0583153138066885 ether, AmountOutMin = 2.429786260142227 ether
+* Swap 4: 'tokenD' -> 'tokenC': AmountIn = 2.429786260142227 ether, AmountOutMin = 5.038996197252911 ether
+* Swap 5: 'tokenC' -> 'tokenB': AmountIn = 5.038996197252911 ether, AmountOutMin = 20.042339589188174 ether
+* Final Reward (tokenB balance): 20042339589188176107
 
 ## Problem 2
 What is slippage in AMM, and how does Uniswap V2 address this issue? Please illustrate with a function as an example.
